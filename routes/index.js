@@ -111,3 +111,51 @@ router.get('/cue', async (req, res) => {
         res.send(err)
       })
   });
+
+  // Rutas para Facturas
+
+// Ruta para mostrar Facturas
+
+router.get('/fac', async (req, res) => {
+    try {
+      const facturas = await facturaNuevoController.Mostrar_todos();
+      res.render('fac', { results: facturas }); 
+    } catch (error) {
+      res.status(500).send('Error al obtener las facturas');
+    }
+  });
+  
+  // Registrar Facturas
+  
+  router.post('/fac/registro', function(req, res, next) {
+    facturaNuevoController.registro(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
+  
+  // Buscar Facturas por fecha
+  
+  router.get('/fac/busqueda', async (req, res) => {
+    try {
+      const facturas = await facturaNuevoController.Mostrar_por_dia(facturas);
+      res.render('facResultado', { results: facturas }); 
+    } catch (error) {
+      res.status(500).send('Error al obtener las facturas');
+    }
+  });
+  
+  router.post('/fac/busqueda', function(req, res, next) {
+    facturaNuevoController.Mostrar_por_dia(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
