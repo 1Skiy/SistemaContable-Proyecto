@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lista de Proveedores</title>
+</head>
+<body>
+  <h1>Lista de Proveedores</h1>
+  <ul>
+    <% results.forEach((proveedor)=> { %>
+      <li>
+        <strong>Nombre:</strong> <%= proveedor.Nombre %><br>
+        <strong>Telefono:</strong> <%= proveedor.Telefono %><br>
+        <strong>RIF:</strong> <%= proveedor.RIF %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/pro/registro" class="btn btn-primary">Registrar proveedor</a> <!-- Botón para agregar Proveedores -->
+</body>
+</html>

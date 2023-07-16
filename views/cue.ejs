@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lista de cuentas</title>
+</head>
+<body>
+  <h1>Lista de cuentas</h1>
+  <ul>
+    <% results.forEach((cuenta)=> { %>
+      <li>
+        <strong>Nombre:</strong> <%= cuenta.Nombre %><br>
+        <strong>Tipo:</strong> <%= cuenta.Tipo %><br>
+        <strong>Estado:</strong> <%= cuenta.Estado %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/cue/registro" class="btn btn-primary">Registrar cuenta</a> <!-- Botón para agregar cuentas -->
+  <a href="/cue/editar" class="btn btn-primary">Edditar cuenta</a>
+</body>
+</html>

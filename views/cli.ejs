@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lista de Clientes</title>
+</head>
+<body>
+  <h1>Lista de Clientes</h1>
+  <ul>
+    <% results.forEach((cliente)=> { %>
+      <li>
+        <strong>Nombre:</strong> <%= cliente.Nombre %><br>
+        <strong>Apellido:</strong> <%= cliente.Apellido %><br>
+        <strong>Cedula:</strong> <%= cliente.Cedula %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/cli/registro" class="btn btn-primary">Registrar Cliente</a> <!-- Botón para agregar clientes -->
+</body>
+</html>

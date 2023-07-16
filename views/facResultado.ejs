@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lista de facturas</title>
+</head>
+<body>
+  <h1>Lista de facturas</h1>
+  <ul>
+    <% results.forEach((factura)=> { %>
+      <li>
+        <strong>Nombre:</strong> <%= factura.Nombre %><br>
+        <strong>Fecha:</strong> <%= factura.Fecha %><br>
+        <strong>Monto:</strong> <%= factura.Monto %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/fac/registro" class="btn btn-primary">Registrar factura</a> <!-- Botón para agregar facturas -->
+</body>
+</html>

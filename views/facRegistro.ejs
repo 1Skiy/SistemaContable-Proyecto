@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar factura</title>
+</head>
+<body>
+    <h1>Registrar factura</h1>
+    <form method="POST" action="/fac/Registrar">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="Nombre" id="Nombre" required>
+
+        <label for="Fecha">Fecha:</label>
+        <input type="date" name="Fecha" id="Fecha" required>
+
+        <label for="Monto">Monto:</label>
+        <input type="number" name="Monto" id="Monto" required>
+
+        <button type="submit">Agregar factura</button>
+    </form>
+</body>
+</html>
