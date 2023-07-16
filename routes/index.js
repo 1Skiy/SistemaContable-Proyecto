@@ -24,3 +24,38 @@ router.get('/cli', async (req, res) => {
       res.status(500).send('Error al obtener los clientes');
     }
   });
+
+  // Registrar Clientes
+
+router.post('/cli/registro', function(req, res, next) {
+    clienteNuevoController.registro(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
+  
+  // Buscar Clientes por Cedula
+  
+  router.get('/cli/busqueda', async (req, res) => {
+    try {
+      const clientes = await clienteNuevoController.Mostrar_por_cedula(clientes);
+      res.render('cliResultado', { results: clientes }); 
+    } catch (error) {
+      res.status(500).send('Error al obtener los clientes');
+    }
+  });
+  
+  router.post('/cli/busqueda', function(req, res, next) {
+    clienteNuevoController.Mostrar_por_cedula(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
