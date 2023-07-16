@@ -159,3 +159,57 @@ router.get('/fac', async (req, res) => {
         res.send(err)
       })
   });
+
+  // Eliminar facturas por id
+
+router.delete('/fac/eliminar', function(req, res, next) {
+    facturaNuevoController.eliminar(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
+
+  // Rutas para Productos
+
+// Registrar Productos
+
+router.post('/pro/registro', function(req, res, next) {
+    productoNuevoController.registro(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
+  
+  // Editar Productos
+  
+  router.put('/pro/editar', function(req, res, next) {
+    productoNuevoController.editar(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
+  
+  // Eliminar Productos
+  
+  router.delete('/pro/eliminar', function(req, res, next) {
+    productoNuevoController.eliminar(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
