@@ -59,3 +59,55 @@ router.post('/cli/registro', function(req, res, next) {
         res.send(err)
       })
   });
+
+  // Rutas para Cuentas
+
+// Mostrar Cuentas
+
+router.get('/cue', async (req, res) => {
+    try {
+      const cuentas = await cuentaNuevoController.Mostrar_todos();
+      res.render('cue', { results: cuentas }); 
+    } catch (error) {
+      res.status(500).send('Error al obtener las cuentas');
+    }
+  });
+  
+  // Registrar Cuentas
+  
+  router.post('/cue/registro', function(req, res, next) {
+    cuentaNuevoController.registro(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
+  
+  // Editar Cuentas
+  
+  router.put('/cue/editar', function(req, res, next) {
+    cuentaNuevoController.editar(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
+  
+  // Eliminar Cuentas por id
+  
+  router.delete('/cue/eliminar', function(req, res, next) {
+    cuentaNuevoController.eliminar(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
