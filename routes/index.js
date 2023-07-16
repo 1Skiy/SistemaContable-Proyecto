@@ -213,3 +213,44 @@ router.post('/pro/registro', function(req, res, next) {
         res.send(err)
       })
   });
+
+  // Rutas para Proveedores
+
+// Mostrar Proveedores
+
+router.get('/prove', async (req, res) => {
+    try {
+      const proveedors = await proveedorNuevoController.Mostrar_todos();
+      res.render('prove', { results: proveedors }); 
+    } catch (error) {
+      res.status(500).send('Error al obtener los proveedores');
+    }
+  });
+  
+  // Registrar Proveedores
+  
+  router.post('/prove/registro', function(req, res, next) {
+    proveedorNuevoController.registro(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
+  
+  // Editar Proveedores
+  
+  router.put('/prove/editar', function(req, res, next) {
+    proveedorNuevoController.editar(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
+  
+  module.exports = router;
