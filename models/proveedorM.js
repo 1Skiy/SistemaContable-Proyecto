@@ -24,7 +24,7 @@ class proveedorModel {
             [proveedors.Nombre, proveedors.Telefono, proveedors.RIF],
             function (error, results, fields) {
                if (!error) {
-                 resolve(true)
+                 resolve("Se ha Registrado el proveedor")
                } else {
                 reject(error)
                }
@@ -38,7 +38,7 @@ class proveedorModel {
             con.query("UPDATE proveedor SET Nombre=?, Telefono=?, RIF=? WHERE proveedor.id=?", [proveedors.Nombre, proveedors.Telefono, proveedors.RIF, proveedors.id], 
             function (error, results, fields) {
                if (!error) {
-                 resolve(true)
+                 resolve("Se ha Actualizado el proveedor")
                } else {
                 reject(error)
                }

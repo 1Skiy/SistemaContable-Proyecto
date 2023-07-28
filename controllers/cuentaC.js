@@ -1,4 +1,4 @@
-const cuentaNuevoM = require('../models/cuentaNuevoM');
+const cuentaNuevoM = require('../models/cuentaM');
 
 class cuentaNuevoController {
   Mostrar_todos() {

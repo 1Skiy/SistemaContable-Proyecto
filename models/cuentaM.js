@@ -24,7 +24,7 @@ class cuentaModel {
             [cuentas.Nombre, cuentas.Tipo,cuentas.Estado],
             function (error, results, fields) {
                if (!error) {
-                 resolve(true)
+                 resolve("Se ha registrado la cuenta")
                } else {
                 reject(error)
                }
@@ -39,7 +39,7 @@ class cuentaModel {
             con.query("UPDATE cuenta SET Tipo=?, Estado=? WHERE cuenta.id=?", [cuentas.Tipo, cuentas.Estado, cuentas.id], 
             function (error, results, fields) {
                if (!error) {
-                 resolve(true)
+                 resolve("Se ha Actualizado la cuenta")
                } else {
                 reject(error)
                }
@@ -53,7 +53,7 @@ class cuentaModel {
             con.query("DELETE FROM cuenta WHERE id = ?", [cuentas.id], 
             function (error, results, fields) {
                if (!error) {
-                 resolve(true)
+                 resolve("Se ha Eliminado la cuenta")
                } else {
                 reject(error)
                }

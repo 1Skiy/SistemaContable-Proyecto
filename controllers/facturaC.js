@@ -1,4 +1,4 @@
-const facturaNuevoM = require('../models/facturaNuevoM');
+const facturaNuevoM = require('../models/facturaM');
 
 class facturaNuevoController {
   Mostrar_todos() {

@@ -40,7 +40,7 @@ class clienteModel {
             [clientes.Nombre, clientes.Apellido,clientes.Cedula],
             function (error, results, fields) {
                if (!error) {
-                 resolve(true)
+                 resolve("Se ha registrado el cliente")
                } else {
                 reject(error)
                }

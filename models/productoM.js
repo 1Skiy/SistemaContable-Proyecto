@@ -2,6 +2,21 @@ const con = require("../database/db")
 
 class productoModel {
 
+    Mostrar_todos(){
+        return new Promise((resolve, reject)=>{
+            con.query(
+                "SELECT * FROM productos",
+                function (error, results) {
+                    if (error) {
+
+                        reject(error);
+                    }
+                  resolve(results)
+                }
+            )
+        })
+    }
+
     registro(producto){
         return new Promise((resolve, reject)=>{
             console.log(producto)
@@ -9,7 +24,7 @@ class productoModel {
             [producto.Nombre, producto.Precio, producto.Stock],
             function (error, results, fields) {
                if (!error) {
-                 resolve(true)
+                 resolve("Se ha Registrado el producto")
                } else {
                 reject(error)
                }
@@ -23,7 +38,7 @@ class productoModel {
             con.query("UPDATE productos SET Precio=?, Stock=? WHERE productos.id=?", [producto.Precio, producto.Stock, producto.id], 
             function (error, results, fields) {
                if (!error) {
-                 resolve(true)
+                 resolve("Se ha Actualizado el producto")
                } else {
                 reject(error)
                }

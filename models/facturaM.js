@@ -40,7 +40,7 @@ class facturaModel {
             [facturas.Nombre, facturas.Fecha,facturas.Monto],
             function (error, results, fields) {
                if (!error) {
-                 resolve(true)
+                 resolve("Se ha Registrado la factura")
                } else {
                 reject(error)
                }
@@ -54,7 +54,7 @@ class facturaModel {
             con.query("DELETE FROM factura WHERE id = ?", [facturas.id], 
             function (error, results, fields) {
                if (!error) {
-                 resolve(true)
+                 resolve("Se ha Eliminado la factura")
                } else {
                 reject(error)
                }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lista de Productos</title>
+</head>
+<body>
+  <h1>Lista de Productos</h1>
+  <ul>
+    <% results.forEach((productos)=> { %>
+      <li>
+        <strong>Nombre:</strong> <%= productos.Nombre %><br>
+        <strong>Precio:</strong> <%= productos.Precio %><br>
+        <strong>Stock:</strong> <%= productos.Stock %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/pro/registro" class="btn btn-primary">Registrar Productos</a> <!-- Botón para agregar Productos -->
+  <a href="/menu" class="btn btn-primary">Volver al Menú</a>
+</body>
+</html>

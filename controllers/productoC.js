@@ -1,4 +1,4 @@
-const productoNuevoM = require('../models/productoNuevoM');
+const productoNuevoM = require('../models/productoM');
 
 class productoNuevoController {
   Mostrar_todos() {
