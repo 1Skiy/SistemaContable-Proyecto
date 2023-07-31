@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar datos en transacciones</title>
+</head>
+<body>
+    <h1>Registrar datos en transacciones</h1>
+    <form method="POST" action="/transacciones/registro">
+        
+        <label for="tipo">Tipo de transacción:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="activo">Activo</option>
+            <option value="pasivo">Pasivo</option>
+            <option value="capital">Capital</option>
+            <option value="ingreso">Ingreso</option>
+            <option value="gasto">Gasto</option>
+        </select><br><br>
+        
+        <label for="monto">Monto de la transacción:</label>
+        <input type="text" name="monto" id="monto" required>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" id="fecha" required>
+
+
+        <button type="submit">Agregar Datos</button>
+    </form>
+    <a href="/menu" class="btn btn-primary">Volver al Menú</a>
+</body>
+</html>

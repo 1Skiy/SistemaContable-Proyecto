@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Libro Diario</title>
+</head>
+<body>
+  <h1>Libro Diario</h1>
+  <ul>
+    <% results.forEach((librom)=> { %>
+      <li>
+        <strong>Fecha:</strong> <%= librom.nombrecuenta %><br>
+        <strong>Descripcion:</strong> <%= librom.saldo %><br>
+        <strong>Referencia:</strong> <%= librom.fecha %>
+        <strong>Tipo:</strong> <%= librom.tipo %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/librod/registro" class="btn btn-primary">Registrar datos</a>
+  <a href="/menu" class="btn btn-primary">Volver al Menú</a>
+</body>
+</html>

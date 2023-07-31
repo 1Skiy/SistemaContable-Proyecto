@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Libro Diario</title>
+</head>
+<body>
+  <h1>Libro Diario</h1>
+  <ul>
+    <% results.forEach((librod)=> { %>
+      <li>
+        <strong>Fecha:</strong> <%= librod.fecha %><br>
+        <strong>Descripcion:</strong> <%= librod.descripcion %><br>
+        <strong>Referencia:</strong> <%= librod.referencia %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/librod/registro" class="btn btn-primary">Registrar datos</a> 
+  <a href="/menu" class="btn btn-primary">Volver al Menú</a>
+</body>
+</html>

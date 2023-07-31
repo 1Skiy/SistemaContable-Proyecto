@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar datos en libro mayor</title>
+</head>
+<body>
+    <h1>Registrar datos para el libro mayor</h1>
+    <form method="POST" action="/librom/registro">
+        <label for="nombrecuenta">Nombre de la cuenta:</label>
+        <input type="text" name="nombrecuenta" id="nombrecuenta" required>
+
+        <label for="saldo">Saldo:</label>
+        <input type="number" name="saldo" id="saldo" required>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" id="fecha" required>
+
+        <label for="tipo">Tipo de cuenta:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="activo">Activo</option>
+            <option value="pasivo">Pasivo</option>
+            <option value="capital">Capital</option>
+            <option value="ingreso">Ingreso</option>
+            <option value="gasto">Gasto</option>
+        </select><br><br>
+
+        <button type="submit">Agregar Datos</button>
+    </form>
+    <a href="/menu" class="btn btn-primary">Volver al Menú</a>
+</body>
+</html>

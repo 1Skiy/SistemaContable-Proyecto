@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Transacciones</title>
+</head>
+<body>
+  <h1>Lista de transacciones</h1>
+  <ul>
+    <% results.forEach((transacciones)=> { %>
+      <li>
+        <strong>Tipo:</strong> <%= transacciones.tipo %><br>
+        <strong>Monto:</strong> <%= transacciones.monto %><br>
+        <strong>Fecha:</strong> <%= transacciones.fecha %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/transacciones/registro" class="btn btn-primary">Registrar datos</a> 
+  <a href="/menu" class="btn btn-primary">Volver al Menú</a>
+</body>
+</html>

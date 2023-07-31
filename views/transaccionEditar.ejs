@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Transaccion</title>
+</head>
+<body>
+    <h1>Editar transaccion</h1>
+    <form method="PUT" action="/transaccion/editar">
+
+        <label for="id">id:</label>
+        <input type="number" name="id" id="id" required>
+
+        <label for="tipo">Tipo:</label>
+        <input type="text" name="tipo" id="tipo" required>
+
+        <label for="monto">Monto:</label>
+        <input type="number" name="monto" id="monto" required>
+
+
+        <button type="submit">Editar transaccion</button>
+    </form>
+    <a href="/menu" class="btn btn-primary">Volver al Menú</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar datos en libro diario</title>
+</head>
+<body>
+    <h1>Registrar datos para el libro diario</h1>
+    <form method="POST" action="/librod/registro">
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" id="fecha" required>
+
+        <label for="descripcion">Descripción:</label>
+        <input type="text" name="descripcion" id="descripcion" required>
+
+        <label for="referencia">Referencia:</label>
+        <input type="number" name="referencia" id="referencia" required>
+
+
+        <button type="submit">Agregar Datos</button>
+    </form>
+    <a href="/menu" class="btn btn-primary">Volver al Menú</a>
+</body>
+</html>
