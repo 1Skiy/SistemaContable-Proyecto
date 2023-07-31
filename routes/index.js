@@ -10,7 +10,10 @@ const facturaNuevoController = require('../controllers/facturaC');
 const productoNuevoController = require('../controllers/productoC');
 const proveedorNuevoController = require('../controllers/proveedorC');
 const usersControllers = require("../controllers/usersC");
-const loginControllers = require("../controllers/loginC")
+const loginControllers = require("../controllers/loginC");
+const libromayorControllers = require("../controllers/libromayorC");
+const librodiarioControllers = require("../controllers/librodiarioC");
+const transaccionController = require("../controllers/transaccionesC");
 const { verificarToken} = require("../utilidades/auth");
 
 
@@ -129,6 +132,113 @@ router.get('/cli', async (req, res) => {
   
   router.post('/cli/busqueda', function(req, res, next) {
     clienteNuevoController.Mostrar_por_cedula(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+      .catch((err)=>{
+        res.send(err)
+      })
+  });
+  
+  // Rutas para libromayor
+
+// Mostrar el libro mayor
+
+router.get('/librom', async (req, res) => {
+  try {
+    const librom = await libromayorControllers.Mostrar_todos();
+    res.render('librom', { results: librom }); 
+  } catch (error) {
+    res.status(500).send('Error al obtener los datos');
+  }
+});
+
+  // Registrar datos en libro mayor
+
+  router.get('/librom/registro', function(req, res){
+    res.render('libromRegistro')
+  })
+
+  router.post('/librom/registro', function(req, res, next) {
+    libromayorControllers.registro(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+     .catch((err)=>{
+        res.send(err)
+      })
+  });
+  
+
+  // Rutas para librodiario
+
+// Mostrar el libro diario
+
+router.get('/librod', async (req, res) => {
+  try {
+    const librod = await librodiarioControllers.Mostrar_todos();
+    res.render('librod', { results: librod }); 
+  } catch (error) {
+    res.status(500).send('Error al obtener los datos');
+  }
+});
+
+  // Registrar datos en libro diario
+
+  router.get('/librod/registro', function(req, res){
+    res.render('librodRegistro')
+  })
+
+  router.post('/librod/registro', function(req, res, next) {
+    librodiarioControllers.registro(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+     .catch((err)=>{
+        res.send(err)
+      })
+  });
+
+// Rutas para transacciones
+
+// Mostrar las transacciones
+
+router.get('/transacciones', async (req, res) => {
+  try {
+    const transacc = await transaccionController.Mostrar_todos();
+    res.render('transacciones', { results: transacc }); 
+  } catch (error) {
+    res.status(500).send('Error al obtener los datos');
+  }
+});
+
+  // Registrar datos en transacciones
+
+  router.get('/transacciones/registro', function(req, res){
+    res.render('transaccRegistro')
+  })
+
+  router.post('/transacciones/registro', function(req, res, next) {
+    transaccionController.registro(req.body)
+      .then((ress)=>{
+        res.send(ress)
+      })
+      
+     .catch((err)=>{
+        res.send(err)
+      })
+  });
+
+// editar transaccion
+  router.get('/transaccion/editar', function(req, res){
+    res.render('transaccionEditar')
+  })
+  
+  router.put('/transaccion/editar', function(req, res, next) {
+    transaccionController.editar(req.body)
       .then((ress)=>{
         res.send(ress)
       })
