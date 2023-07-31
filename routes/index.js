@@ -11,7 +11,7 @@ const productoNuevoController = require('../controllers/productoC');
 const proveedorNuevoController = require('../controllers/proveedorC');
 const usersControllers = require("../controllers/usersC");
 const loginControllers = require("../controllers/loginC")
-const { verificarToken, verificarRol } = require("../utilidades/auth");
+const { verificarToken} = require("../utilidades/auth");
 
 
 //Rutas para registrar usuarios
